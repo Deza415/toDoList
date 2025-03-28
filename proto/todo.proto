@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package todo;
 
-option go_package = "github.com/Deza415/toDoList/proto;todo";
+option go_package = "github.com/Deza415/toDoList/proto";
 
 service TodoService {
 rpc CreateTodo (CreateTodoRequest) returns (Todo);
