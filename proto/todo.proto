@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package todo;
+
+option go_package = "github.com/Deza415/toDoList/proto;todo";
+
+service TodoService {
+rpc CreateTodo (CreateToDoRequest) returns (Todo);
+rpc GetTodos (Empty) returns (TodoList);
+rpc UpdateTodo (UpdateTodoRequest) retuns (Todo);
+rpc DeleteTodo (DeleteTodoRequest) returns (Empty);
+}
+
+
+message Empty {}
+
+message Todo {
+    int32 id =1;
+    string title = 2;
+    bool completed = 3;
+}
+
+message TodoList {
+    repeated todos = 1;
+}
+
+message CreateToDoRequest {
+    string title = 1;
+}
+
+message UpdateTodoRequest {
+  int32 id = 1;
+  string title = 2;
+  bool completed = 3;
+}
+
+message DeleteTodoRequest {
+  int32 id = 1;
+}
