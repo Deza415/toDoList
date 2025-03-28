@@ -5,9 +5,9 @@ package todo;
 option go_package = "github.com/Deza415/toDoList/proto;todo";
 
 service TodoService {
-rpc CreateTodo (CreateToDoRequest) returns (Todo);
+rpc CreateTodo (CreateTodoRequest) returns (Todo);
 rpc GetTodos (Empty) returns (TodoList);
-rpc UpdateTodo (UpdateTodoRequest) retuns (Todo);
+rpc UpdateTodo (UpdateTodoRequest) returns (Todo);
 rpc DeleteTodo (DeleteTodoRequest) returns (Empty);
 }
 
@@ -21,10 +21,10 @@ message Todo {
 }
 
 message TodoList {
-    repeated todos = 1;
+    repeated Todo todos = 1;
 }
 
-message CreateToDoRequest {
+message CreateTodoRequest {
     string title = 1;
 }
 
